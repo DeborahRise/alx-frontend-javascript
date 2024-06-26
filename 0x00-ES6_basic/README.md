@@ -13,6 +13,7 @@
 - Object creation and their properties in ES6
 - Iterators and for-of loops
 
+NOTE: Eslint is super important
 ### In Summary:
 What ES6 Is
 ES6, or ECMAScript 2015, is a significant update to JavaScript that introduced a wide array of new features and improvements to the language. It is the sixth edition of the ECMAScript standard, which is the specification that JavaScript is based on.
