@@ -5,7 +5,7 @@ export default function taskBlock(trueOrFalse) {
   if (trueOrFalse) {
     const task = true;
     const task2 = false;
-    console.log(task, task2);
+    console.log(task, task2); // Trying to bypass Eslint's wahala
   }
 
   return [task, task2];
