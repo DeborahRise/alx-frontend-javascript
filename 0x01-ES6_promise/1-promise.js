@@ -1,22 +1,25 @@
-export default function getFullResponseFromAPI() {
+export default function getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const success = true;
-      if (success) {
-        resolve({
-          status: 200,
-          body: 'Success',
-        });
-      } else {
-        reject({
-          Error: 'The fake API is not working currently',
-        });
-      }
-    }, 2000);
+    if (success) {
+      resolve({
+        status: 200,
+        body: 'Success',
+      });
+    } else {
+      reject(new Error('The fake API is not working currently'));
+    }
   });
 }
 
-getFullResponseFromAPI()
+getFullResponseFromAPI(true)
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+getFullResponseFromAPI(false)
   .then((response) => {
     console.log(response);
   })
