@@ -3,31 +3,26 @@ import Currency from "./3-currency";
 export default class Pricing {
     constructor(amount, currency) {
         this._amount = Pricing.isNumber(amount);
-        this.currency = Pricing.isString(currency);
+        this._currency = currency
     }
 
     get amount() {
-        return this.amount;
+        return this._amount;
       }
     
       get currency() {
-        return this.currency;
+        return this._currency;
       }
     
       set amount(amount) {
-        this.amount = Pricing.isNumber(amount);
+        this._amount = Pricing.isNumber(amount);
       }
     
       set currency(currency) {
-        this.currency = Pricing.isString(currency);
+        currency = new Currency();
+        this._currency = currency;
       }
     
-      static isString(value) {
-        if (typeof value !== 'string') {
-          throw new TypeError('Value must be a string');
-        }
-        return value;
-      }
       static isNumber(value) {
         if (typeof value !== 'number') {
           throw new TypeError('Length must be a number');
@@ -36,6 +31,10 @@ export default class Pricing {
       }
       displayFullPrice() {
 
-        console.log(`${this._amount} ${new Currency(currency_code, currency_name).displayFullCurrency()}`)
+        return (`${this._amount} ${this._currency.displayFullCurrency()}`)
+      }
+      static convertPrice(amount, conversionRate) {
+        
+        return (`${amount} * ${conversionRate}`)
       }
 }
