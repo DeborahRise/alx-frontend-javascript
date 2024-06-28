@@ -29,22 +29,22 @@ export default class HolbertonCourse {
     this._students = this.isStudentsArray(students);
   }
 
-  isString(value) {
+  static isString(value) {
     if (typeof value !== 'string') {
       throw new TypeError('Name must be a string');
     }
     return value;
   }
 
-  isNumber(value) {
+  static isNumber(value) {
     if (typeof value !== 'number') {
       throw new TypeError('Length must be a number');
     }
     return value;
   }
 
-  isStudentsArray(value) {
-    if (!Array.isArray(value) || !value.every(student => typeof value !== 'string')) {
+  static isStudentsArray(value) {
+    if (!Array.isArray(value) || !value.every((student) => typeof student === 'string')) {
       throw new TypeError('Student must be an array');
     }
     return value;
