@@ -1,8 +1,8 @@
 export default class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = this.isString(name);
-    this._length = this.isNumber(length);
-    this._students = this.isStudentsArray(students);
+    this._name = HolbertonCourse.isString(name);
+    this._length = HolbertonCourse.isNumber(length);
+    this._students = HolbertonCourse.isStudentsArray(students);
   }
 
   get name() {
@@ -18,15 +18,15 @@ export default class HolbertonCourse {
   }
 
   set name(name) {
-    this._name = this.isString(name);
+    this._name = HolbertonCourse.isString(name);
   }
 
   set length(length) {
-    this._length = this.isNumber(length);
+    this._length = HolbertonCourse.isNumber(length);
   }
 
   set students(students) {
-    this._students = this.isStudentsArray(students);
+    this._students = HolbertonCourse.isStudentsArray(students);
   }
 
   static isString(value) {
