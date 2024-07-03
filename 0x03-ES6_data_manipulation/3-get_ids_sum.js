@@ -1,4 +1,4 @@
 export default function getStudentIdsSum(listOfStudents) {
-  const sumId = listOfStudents.reduce((acc, curvalue) => acc + curvalue.id, 0);
+  const sumId = listOfStudents.reduce((acc, { id }) => acc + id, 0);
   return sumId;
 }
